@@ -38,7 +38,7 @@ export default function Header() {
     }
 
     return (
-        <header className={isHome ? 'header' : 'bg-slate-800'}>
+        <header className={isHome ? 'header h-[100vh]' : 'bg-slate-800 h-[100vh]'}>
             <div className="mx-auto container px-5 py-16">
                 <div className="flex justify-between items-center">
                     <div>
