@@ -13,6 +13,7 @@ export default function Header() {
     const fetchCategories = useAppStore((state) => state.fetchCategories)
     const categories = useAppStore((state) => state.categories)
     const searchRecipes = useAppStore((state) => state.searchRecipes)
+    const showNotification = useAppStore((state) => state.showNotification)
     
     useEffect(() => {
         fetchCategories()
@@ -29,7 +30,10 @@ export default function Header() {
         e.preventDefault()
 
         if (Object.values(searchFilters).includes('')) {
-            console.log('Faltan campos')
+            showNotification({
+                text: 'Todos los campos son obligatorios',
+                error: true
+            })
             return
         }
 
@@ -38,7 +42,7 @@ export default function Header() {
     }
 
     return (
-        <header className={isHome ? 'header h-[100vh]' : 'bg-slate-800 h-[100vh]'}>
+        <header className={isHome ? 'header' : 'bg-slate-800'}>
             <div className="mx-auto container px-5 py-16">
                 <div className="flex justify-between items-center">
                     <div>

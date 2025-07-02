@@ -9,7 +9,7 @@ export default function DrinkCart({drink}: DrinkCartProps) {
 
   const selectRecipe = useAppStore((state) => state.selectRecipe)
   return (
-    <div className="border shadow-lg">
+    <div className="border-none shadow-lg">
         <div className="overflow-hidden">
             <img 
                 src={drink.strDrinkThumb} 
